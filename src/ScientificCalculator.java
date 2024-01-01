@@ -189,12 +189,6 @@ public class ScientificCalculator extends JFrame {
             }
         }
 
-        private void handleExpressionError() {
-            jTextField.setText("表达式错误");
-            JOptionPane.showMessageDialog(null, "表达式错误", "Error!", JOptionPane.ERROR_MESSAGE);
-            command = "=";
-            start = true;
-        }
 
         public void actionPerformed(ActionEvent e) {
             String input = e.getActionCommand();
@@ -281,14 +275,13 @@ public class ScientificCalculator extends JFrame {
                 } finally {
                     start = true;
                 }
-            } else if (input.equals("Hex")) {
-
+            }else if (input.equals("Hex")) {
                 try {
                     // 尝试从jTextField中的文本解析整数值
                     int decimalNumber = Integer.parseInt(jTextField.getText());
 
-                    // 将十进制数字转换为十六进制字符串表示
-                    String result16 = Integer.toHexString(decimalNumber);
+                    // 将十进制数字转换为十六进制字符串表示，并将字母转换为大写
+                    String result16 = Integer.toHexString(decimalNumber).toUpperCase();
 
                     // 使用名为getPrettyNumber的方法格式化十六进制结果
                     jTextField.setText("" + getPrettyNumber(result16));
@@ -299,8 +292,8 @@ public class ScientificCalculator extends JFrame {
                     // 处理jTextField中的文本不是有效整数的情况
                     handleExpressionError();
                 }
-
-            } else if (input.equals("1/X")) {
+            }
+            else if (input.equals("1/X")) {
                 try {
                     double divisor = Double.parseDouble(jTextField.getText());
                     if (divisor != 0) {
@@ -344,7 +337,16 @@ public class ScientificCalculator extends JFrame {
                 result = Double.parseDouble(jTextField.getText()) / 100.0;
                 jTextField.setText("" + getPrettyNumber(Double.toString(result)));
                 start = true;
-            } else if (input.equals("√X")) {
+            }else if (input.equals("(")) {
+                // 在文本域中追加 "("
+                jTextField.setText(jTextField.getText() + "(");
+                start = false; // 或者保持 start 的状态，根据需要设置为 true 或 false
+            }
+            else if (input.equals(")")) {
+                // 在文本域中追加 ")"
+                jTextField.setText(jTextField.getText() + ")");
+                start = false; // 或者保持 start 的状态，根据需要设置为 true 或 false
+            }else if (input.equals("√X")) {
                 try {
                     double value = Double.parseDouble(jTextField.getText());
                     if (value >= 0) {

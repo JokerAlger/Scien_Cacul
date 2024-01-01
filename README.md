@@ -87,8 +87,8 @@
 
 标准计算器界面
 
-![image-20231230100134784](C:\Users\Joker\AppData\Roaming\Typora\typora-user-images\image-20231230100134784.png)
+![image-20231230100134784](imgs/image-20231230100134784.png)
 
 科学计算器界面
 
-![image-20231230100154896](C:\Users\Joker\AppData\Roaming\Typora\typora-user-images\image-20231230100154896.png)
+![image-20231230100154896](imgs\image-20231230100154896.png)
