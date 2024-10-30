@@ -4,7 +4,6 @@
 
 ##### 其他功能：开方、求倒数、化百分数、求平方、 求立方、求x的y次方、求阶乘、取余、取整（取小数点之前的）、求常用对数、求三角函数；
 
-##### PS:此项目在[everglow0/Java-Calculator](https://github.com/everglow0/Java-Calculator)项目基础上修改
 
 ## 功能
 
